@@ -1,0 +1,140 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Ödev 1\n",
+    "\n",
+    "Bir sözlük oluşturulur ve bu sözlükte öğrencilerin isimleri ve Matematik, Fizik, Kimya notları tutulur. Kullanıcıdan isim ve ders ismi(Matematik, Fizik, Kimya) istenir ve bu bilgilere göre çıktı verilir."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "notlar = {\n",
+    "    \"aslı\": {\"Matematik\": 85, \"Fizik\": 90, \"Kimya\": 78},\n",
+    "    \"tuana\": {\"Matematik\": 92, \"Fizik\": 88, \"Kimya\": 84},\n",
+    "    \"can\": {\"Matematik\": 76, \"Fizik\": 80, \"Kimya\": 70}\n",
+    "}\n",
+    "isim = input(\"Öğrencinin ismini girin: \")\n",
+    "ders = input(\"Dersin adını girin (Matematik, Fizik, Kimya): \")\n",
+    "\n",
+    "if isim in notlar:\n",
+    "    if ders in notlar[isim]:\n",
+    "        print(f\"{isim} adlı öğrencinin {ders} notu: {notlar[isim][ders]}\")\n",
+    "    else:\n",
+    "        print(f\"{ders} dersi {isim} için mevcut değil.\")\n",
+    "else:\n",
+    "    print(f\"{isim} adlı öğrenci bulunamadı.\")\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Ödev 2\n",
+    "\n",
+    "Sözlük üzerinde değerleri değiştirme, yeni değer ekleme, kullanıcıya ulaşmak istediği bilgileri sorma gibi uygulamalar yapın."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "notlar = {\n",
+    "    \"aslı\": {\"Matematik\": 85, \"Fizik\": 90, \"Kimya\": 78},\n",
+    "    \"tuana\": {\"Matematik\": 92, \"Fizik\": 88, \"Kimya\": 84},\n",
+    "    \"can\": {\"Matematik\": 76, \"Fizik\": 80, \"Kimya\": 70}\n",
+    "}\n",
+    "\n",
+    "while True:\n",
+    "    print(\"\\n1 - Notu Görüntüle\\n2 - Notu Güncelle\\n3 - Çıkış\")\n",
+    "    secim = input(\"Seçiminiz: \")\n",
+    "\n",
+    "    if secim == \"1\":  # Not görüntüleme\n",
+    "        isim = input(\"Öğrenci ismi: \").strip().lower()\n",
+    "        if isim in notlar:\n",
+    "            ders = input(\"Ders adı (Matematik, Fizik, Kimya): \").strip().lower()\n",
+    "            print(notlar[isim].get(ders, \"Bu ders bulunamadı.\"))\n",
+    "        else:\n",
+    "            print(\"Öğrenci bulunamadı.\")\n",
+    "\n",
+    "    elif secim == \"2\":  # Not güncelleme\n",
+    "        isim = input(\"Öğrenci ismi: \").strip().lower()\n",
+    "        if isim in notlar:\n",
+    "            ders = input(\"Ders adı: \").strip().lower()\n",
+    "            yeni_not = int(input(\"Yeni not: \"))\n",
+    "            notlar[isim][ders] = yeni_not\n",
+    "            print(\"Not güncellendi.\")\n",
+    "        else:\n",
+    "            print(\"Öğrenci bulunamadı.\")\n",
+    "\n",
+    "    elif secim == \"3\":  # Çıkış\n",
+    "        break\n",
+    "    else:\n",
+    "        print(\"Geçersiz seçim!\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "notlar = {\n",
+    "    \"aslı\": {\"Matematik\": 85, \"Fizik\": 90, \"Kimya\": 78},\n",
+    "    \"tuana\": {\"Matematik\": 92, \"Fizik\": 88, \"Kimya\": 84},\n",
+    "    \"can\": {\"Matematik\": 76, \"Fizik\": 80, \"Kimya\": 70}\n",
+    "}\n",
+    "isim = input(\"Öğrencinin ismini girin: \")\n",
+    "ders = input(\"Dersin adını girin (Matematik, Fizik, Kimya): \")\n",
+    "\n",
+    "if isim in notlar:\n",
+    "    if ders in notlar[isim]:\n",
+    "        print(f\"{isim} adlı öğrencinin {ders} notu: {notlar[isim][ders]}\")\n",
+    "    else:\n",
+    "        print(f\"{ders} dersi {isim} için mevcut değil.\")\n",
+    "else:\n",
+    "    print(f\"{isim} adlı öğrenci bulunamadı.\")\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:base] *",
+   "language": "python",
+   "name": "conda-base-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
